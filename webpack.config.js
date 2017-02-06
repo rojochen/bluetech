@@ -52,7 +52,8 @@ module.exports = {
             'global.jQuery': 'jquery',
             'global.$': 'jquery',
             'window.$': 'jquery',
-            'angular': 'angular'
+            'angular': 'angular',
+            'window.angular': 'angular'
         }),
         new webpack.optimize.UglifyJsPlugin({
             debug: true,
