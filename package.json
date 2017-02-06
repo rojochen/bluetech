@@ -75,6 +75,7 @@
     "jquery.inputmask": "^3.3.4",
     "layer": "^0.1.0",
     "malihu-custom-scrollbar-plugin": "^3.1.5",
+    "normalize-css": "^2.3.1",
     "nprogress": "^0.2.0",
     "parsleyjs": "^2.6.2",
     "pnotify": "^3.0.0",

@@ -19,6 +19,7 @@ require("../../node_modules/datatables.net-scroller-bs/css/scroller.bootstrap.cs
 require("../../node_modules/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css");
 require("../../node_modules/sweetalert2/dist/sweetalert2.min.css");
 require("../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css");
+require("../../node_modules/normalize-css/normalize.css");
 // 找不到
 // require("../../vendors/starrr/dist/starrr.css");
 // require("../../vendors/normalize-css/normalize.css");
