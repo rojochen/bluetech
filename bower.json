@@ -33,7 +33,7 @@
     "fastclick": "^1.0.6",
     "nprogress": "^0.2.0",
     "Chart.js": "^2.0.2",
-    "gauge.js": "gauge.js#^1.2.1",
+    "gauge.js ": "gauge.js#^1.2.1",
     "bootstrap-progressbar": "^0.9.0",
     "iCheck": "icheck#^1.0.2",
     "Flot": "flot#^0.8.3",
