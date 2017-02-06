@@ -24,6 +24,10 @@ module.exports = {
     },
     module: {
         loaders: [{
+            test: /\.jsx?$/,
+            loader: 'babel'
+            // exclude: /node_modules/
+        }, {
             test: /\.(png|gif)$/,
             loader: 'url-loader?limit=100000'
         }, {
@@ -41,6 +45,9 @@ module.exports = {
         }, {
             test: /pnotify.*\.js$/,
             loader: "imports?define=>false,global=>window"
+        }, {
+            test: /\.(eot|svg|ttf|woff|woff2)$/,
+            loader: 'file?name=../css/fonts/[name].[ext]'
         }]
     },
     plugins: [
