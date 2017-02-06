@@ -51,7 +51,19 @@ module.exports = {
             'root.jQuery': 'jquery',
             'global.jQuery': 'jquery',
             'global.$': 'jquery',
-            'window.$': 'jquery'
+            'window.$': 'jquery',
+            'angular': 'angular'
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            debug: true,
+            minimize: true,
+            sourceMap: false,
+            output: {
+                comments: false
+            },
+            compressor: {
+                warnings: false
+            }
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(true),
