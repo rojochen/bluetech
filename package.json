@@ -1,6 +1,6 @@
 {
-  "name": "BT-prototype-2016",
-  "version": "0.0.5",
+  "name": "bluetech",
+  "version": "0.0.1",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -47,6 +47,12 @@
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
-    "angular": "^1.6.1"
-  }
+    "jqvmap": "git+https://github.com/christianesperar/jqvmap.git#master",
+    "promise.prototype.finally": "git+https://github.com/matthew-andrews/Promise.prototype.finally.git",
+    "skycons": "^1.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/rojochen/ui-prototype-2016/issues"
+  },
+  "main": "gulpfile.babel.js"
 }
