@@ -1,0 +1,58 @@
+/* ***** panel ********/
+.panel-default {
+  border-color: #e6e6e6;
+  .panel-heading {
+    color: #333;
+    background-color: $btnDefaultFocusBg;
+    border-color: #ddd;
+  }
+}
+.panel-primary {
+  border-color: $btnPrimaryBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnPrimaryBg;
+    border-color: $btnPrimaryBg;
+  }
+}
+.panel-success {
+  border-color: $btnSuccessBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnSuccessBg;
+    border-color: $btnSuccessBg;
+  }
+}
+.panel-info {
+  border-color: $btnInfoBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnInfoBg;
+    border-color: $btnInfoBg;
+  }
+}
+.panel-warning {
+  border-color: $btnWarningBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnWarningBg;
+    border-color: $btnWarningBg;
+  }
+}
+.panel-danger {
+  border-color: $btnDangerBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnDangerBg;
+    border-color: $btnDangerBg;
+  }
+}
+.panel-dark {
+  border-color: $btnDarkBg;
+  .panel-heading {
+    color: $btnDarkColor;
+    background-color: $btnDarkBg;
+    border-color: $btnDarkBg;
+  }
+}
+/* ***** /panel *******/

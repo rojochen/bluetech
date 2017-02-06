@@ -1,0 +1,251 @@
+/* ***** buttons ********/
+.btn {
+  border-radius: 3px;
+}
+.btn.disabled {
+  opacity: $btnDisabledOpacity;
+}
+a.btn-success, a.btn-primary, a.btn-warning, a.btn-danger {
+  color: #fff;
+}
+
+.btn-default {
+  background: $btnDefaultBg;
+  border: $btnDefaultBorder;
+  &:hover, &:focus, &:active{
+    background: $btnDefaultFocusBg;
+  }
+  &:active:focus{
+    background: darken($btnDefaultBg, 5%);
+  }
+  &.active{
+    background: $btnDefaultFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnDefaultDisabledBg;
+    border: $btnDefaultDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnDefaultDisabledBg;
+    border: $btnDefaultDisabledBorder;
+  }
+}
+
+.btn-success {
+  background: $btnSuccessBg;
+  border: $btnSuccessBorder;
+  &:hover, &:focus, &:active{
+    background: darken($btnSuccessBg, 5%);
+    border-color: darken($btnSuccessBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnSuccessBg, 5%);
+    border-color: darken($btnSuccessBg, 10%);
+  }
+  &.active{
+    background: $btnSuccessFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnSuccessDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnSuccessDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnSuccessDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnSuccessDisabledBorder;
+  }
+}
+
+.btn-primary {
+  background: $btnPrimaryBg;
+  border: $btnPrimaryBorder;
+  &:hover, &:focus, &:active{
+    background: darken($btnPrimaryBg, 5%);
+    border-color: darken($btnPrimaryBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnPrimaryBg, 5%);
+    border-color: darken($btnPrimaryBg, 10%);
+  }
+  &.active{
+    background: $btnPrimaryFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnPrimaryDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnPrimaryDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnPrimaryDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnPrimaryDisabledBorder;
+  }
+}
+
+.btn-info {
+  background: $btnInfoBg;
+  border: $btnInfoBorder;
+  &:hover, &:focus, &:active{
+    background: darken($btnInfoBg, 5%);
+    border-color: darken($btnInfoBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnInfoBg, 5%);
+    border-color: darken($btnInfoBg, 10%);
+  }
+  &.active{
+    background: $btnInfoFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnInfoDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnInfoDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnInfoDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnInfoDisabledBorder;
+  }
+}
+
+.btn-warning{
+  background: $btnWarningBg;
+  border: $btnWarningBorder;
+  &:hover, &:focus, &:active{
+    background: darken($btnWarningBg, 5%);
+    border-color: darken($btnWarningBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnWarningBg, 5%);
+    border-color: darken($btnWarningBg, 10%);
+  }
+  &.active{
+    background: $btnWarningFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnWarningDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnWarningDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnWarningDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnWarningDisabledBorder;
+  }
+}
+
+.btn-danger {
+  background: $btnDangerBg;
+  border: $btnDangerBorder;
+  &:hover, &:focus, &:active{
+    background: darken($btnDangerBg, 5%);
+    border-color: darken($btnDangerBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnDangerBg, 5%);
+    border-color: darken($btnDangerBg, 10%);
+  }
+  &.active{
+    background: $btnDangerFocusBg;
+  }
+  &.disabled:hover{
+    background: $btnDangerDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnDangerDisabledBorder;
+  }
+  &.disabled:focus {
+    background: $btnDangerDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnDangerDisabledBorder;
+  }
+}
+
+.btn-dark {
+  color: $btnDarkColor;
+  background: $btnDarkBg;
+  border: $btnDarkBorder;
+  &:hover, &:focus, &:active{
+    color: $btnDarkColor;
+    background: darken($btnDarkBg, 5%);
+    border-color: darken($btnDarkBg, 10%);
+  }
+  &:active:hover, &:active:focus{
+    background: darken($btnDarkBg, 5%);
+    border-color: darken($btnDarkBg, 10%);
+  }
+  &.active{
+    background: $btnDarkFocusBg;
+  }
+  &.disabled:hover{
+    color: $btnDarkDisabledColor;
+    background: $btnDarkDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnDarkDisabledBorder;
+  }
+  &.disabled:focus {
+    color: $btnDarkDisabledColor;
+    background: $btnDarkDisabledBg;
+    opacity: $btnDisabledOpacityH;
+    border: $btnDarkDisabledBorder;
+  }
+}
+
+.open .dropdown-toggle.btn-success {
+  background: $btnSuccessFocusBg;
+}
+
+.open .dropdown-toggle.btn-dark {
+  color: #FFFFFF;
+  background-color: #394D5F;
+  border-color: #394D5F;
+}
+
+.btn-round {
+  border-radius: 30px;
+}
+
+.btn.btn-app {
+  position: relative;
+  padding: 15px 5px;
+  margin: 0 0 10px 10px;
+  min-width: 80px;
+  height: 60px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  text-align: center;
+  color: #666;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  font-size: 12px;
+  & > .fa{
+    font-size: 20px;
+    display: block;
+  }
+  &:hover {
+    background: $btnAppBg;
+    color: $btnAppColor;
+    border-color: $btnAppBorderColor;
+  }
+  &:active, &:focus {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+  > .badge {
+    position: absolute;
+    top: -3px;
+    right: -10px;
+    font-size: 10px;
+    font-weight: 400;
+  }
+}
+.btn.btn-app > .glyphicon, .btn.btn-app > .ion {
+  font-size: 20px;
+  display: block;
+}
+/* ***** /buttons *******/
