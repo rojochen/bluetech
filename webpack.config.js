@@ -5,7 +5,7 @@ module.exports = {
     devtool: 'eval',
     entry: {
         app: "./src/config/main.js",
-        // style: "./src/config/style.js"
+        style: "./src/config/style.js"
     },
     output: {
         path: "./dist/js",
@@ -34,7 +34,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract("style", "css?minimize!sass")
         }, {
             test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
-            loader: "file-loader?name=img/[name].[ext]"
+            loader: "file-loader?name=../css/img/[name].[ext]"
         }, {
             test: /[\/\\]angular\.js$/,
             loader: "exports?window.angular"
@@ -55,7 +55,7 @@ module.exports = {
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(true),
-        new ExtractTextPlugin("main.css", {
+        new ExtractTextPlugin("../css/main.css", {
             allChunks: true
         })
     ]

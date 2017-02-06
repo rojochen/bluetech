@@ -47,6 +47,7 @@
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
+    "Starr": "0.0.1",
     "angular": "^1.6.1",
     "angular-datatables": "^0.6.0",
     "angular-route": "^1.6.1",
@@ -58,7 +59,13 @@
     "cropper": "^3.0.0-alpha.1",
     "datatables.net": "^2.1.1",
     "datatables.net-bs": "^2.1.1",
+    "datatables.net-buttons-bs": "^1.2.4",
+    "datatables.net-fixedheader-bs": "^3.1.2",
+    "datatables.net-responsive-bs": "^2.1.1",
+    "datatables.net-scroller-bs": "^1.4.2",
     "echarts": "^3.4.0",
+    "font-awesome": "^4.7.0",
+    "google-code-prettify": "^1.0.5",
     "icheck": "^1.0.2",
     "ion-rangeslider": "^2.1.6",
     "jquery": "^3.1.1",
@@ -74,6 +81,7 @@
     "promise-finally": "^3.0.0",
     "select2": "^4.0.3",
     "skycons": "^1.0.0",
-    "sweetalert2": "^6.3.8"
+    "sweetalert2": "^6.3.8",
+    "switchery": "0.0.2"
   }
 }
