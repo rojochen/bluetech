@@ -4,7 +4,7 @@ module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        app: "./src/config/main.js",
+        bluetech: "./src/config/main.js",
         style: "./src/config/style.js"
     },
     output: {
@@ -75,7 +75,7 @@ module.exports = {
         }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(true),
-        new ExtractTextPlugin("../css/main.css", {
+        new ExtractTextPlugin("../css/bluetech.css", {
             allChunks: true
         })
     ]
