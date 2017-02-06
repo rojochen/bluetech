@@ -4,17 +4,59 @@ module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        app: "./src/config/main.js"
+        app: "./src/config/main.js",
+        // style: "./src/config/style.js"
     },
     output: {
-        libraryTarget: 'umd',
-        umdNamedDefine: true,
-        publicPath: "assets/js/",
+        path: "./dist/js",
         filename: "[name].js",
-        chunkFilename: "chunk.[id].js",
-        library: 'pokemon',
+        library: 'bluetech',
+    },
+    resolve: {
+        modulesDirectories: ['node_modules'],
+        alias: {
+            'angular': 'angular/angular',
+            'jquery': 'jquery/dist/jquery.min',
+            'moment': 'moment/src/moment',
+            'PNotify': 'pnotify/dist/pnotify'
+        },
+        extensions: ['', '.js']
     },
     module: {
-
-    }
+        loaders: [{
+            test: /\.(png|gif)$/,
+            loader: 'url-loader?limit=100000'
+        }, {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css?minimize!sass")
+        }, {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style", "css?minimize!sass")
+        }, {
+            test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
+            loader: "file-loader?name=img/[name].[ext]"
+        }, {
+            test: /[\/\\]angular\.js$/,
+            loader: "exports?window.angular"
+        }, {
+            test: /pnotify.*\.js$/,
+            loader: "imports?define=>false,global=>window"
+        }]
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            'root.jQuery': 'jquery',
+            'global.jQuery': 'jquery',
+            'global.$': 'jquery',
+            'window.$': 'jquery'
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(true),
+        new ExtractTextPlugin("main.css", {
+            allChunks: true
+        })
+    ]
 };

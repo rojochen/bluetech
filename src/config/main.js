@@ -12,16 +12,6 @@ define(['jquery', 'angular', 'moment', 'PNotify'], function (jquery, angular, mo
     global.PNotify = PNotify;
 
 
-
-
-
-
-
-
-    // require('bootstrap-progressbar');
-
-
-
     // Plugin
     require("../../node_modules/bootstrap/dist/js/bootstrap.min.js");
     require("../../node_modules/nprogress/nprogress.js");
