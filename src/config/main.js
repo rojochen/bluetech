@@ -13,15 +13,20 @@ define(['jquery', 'angular', 'moment', 'PNotify'], function (jquery, angular, mo
 
 
 
-    require('bootstrap')
 
-    require('nprogress');
 
-    require('bootstrap-progressbar');
+
+
+
+    // require('bootstrap-progressbar');
 
 
 
     // Plugin
+    require("../../node_modules/bootstrap/dist/js/bootstrap.min.js");
+    require("../../node_modules/nprogress/nprogress.js");
+    require("../../node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js");
+
 
     //left mune scrollbar
     // require('../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');
@@ -73,7 +78,7 @@ define(['jquery', 'angular', 'moment', 'PNotify'], function (jquery, angular, mo
     require("../../node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js");
 
     // 這一個有問題
-    require('../../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js');
+    // require('../../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js');
 
     // require('../../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js');
     require("../../node_modules/jquery.inputmask/dist/jquery.inputmask.bundle.js");
