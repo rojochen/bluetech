@@ -99,7 +99,9 @@ define(['jquery', 'angular', 'moment', 'PNotify'], function (jquery, angular, mo
     require("../../node_modules/angular-route/angular-route.min.js");
     require("../../node_modules/angular-datatables/dist/angular-datatables.min.js");
 
-    angular.module('pokemon', ['ngRoute', 'datatables']);
+    // angular.module('pokemon', ['ngRoute', 'datatables']);
+    angular.module('bluetech', ['ngRoute', 'datatables']);
+
 
     return angular;
 });
