@@ -24,7 +24,7 @@ require("../../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css
 require('../../vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css');
 require('../../vendors/sweetalert2/dist/sweetalert2.min.css');
 require('../../src/css/layer/default/layer.css');
-  //  var layer= require('../../vendors/layer/build/layer.js');
+//  var layer= require('../../vendors/layer/build/layer.js');
 
 // require('../../vendors/ng-table/dist/ng-table.css');
 
