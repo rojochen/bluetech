@@ -1,5 +1,5 @@
 {
-  "name": "BT-prototype-2016",
+  "name": "bluetech",
   "version": "0.0.5",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
@@ -8,9 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rojochen/ui-prototype-2016.git"
+    "url": "https://github.com/rojochen/bluetech.git"
   },
-  "keywords": [],
+  "keywords": [
+    "bluetech"
+  ],
   "author": "BT UI/UX Team",
   "contributors": [
     ""
