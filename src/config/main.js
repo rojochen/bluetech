@@ -1,7 +1,7 @@
 define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function (jquery, angular, moment, PNotify, jqueryMousewheel) {
     'use strict';
     console.log(angular);
-    // global.angular = angular;
+
     var $ = jquery;
     global.jQuery = $;
     global.$ = $;

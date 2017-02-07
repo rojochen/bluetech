@@ -77,16 +77,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            '$': 'jquery',
-            'jQuery': 'jquery',
-            'window.jQuery': 'jquery',
-            'root.jQuery': 'jquery',
-            'global.jQuery': 'jquery',
-            'global.$': 'jquery',
-            'window.$': 'jquery',
-            'angular': 'angular'
-        }),
         new webpack.optimize.UglifyJsPlugin({
             debug: true,
             minimize: false,
