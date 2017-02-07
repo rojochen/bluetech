@@ -4,8 +4,8 @@ module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        bluetech: "./src/config/main.js",
-        style: "./src/config/style.js"
+        bluetech: "src/config/main.js",
+        style: "src/config/style.js"
     },
     output: {
         path: "./dist/js",
@@ -13,7 +13,7 @@ module.exports = {
         library: 'bluetech',
     },
     resolve: {
-        modulesDirectories: ['node_modules'],
+        modulesDirectories: ['vendors'],
         alias: {
             'angular': 'angular/angular',
             'jquery': 'jquery/dist/jquery.min',
@@ -24,9 +24,13 @@ module.exports = {
     },
     module: {
         loaders: [{
-            test: /\.jsx?$/,
-            loader: 'babel',
-            exclude: /node_modules/
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015'],
+                plugins: ['transform-runtime']
+            }
         }, {
             test: /\.(png|gif)$/,
             loader: 'url-loader?limit=100000'
