@@ -15,12 +15,34 @@ module.exports = {
     resolve: {
         modulesDirectories: ['vendors'],
         alias: {
-            'angular': 'angular/angular',
-            'jquery': 'jquery/dist/jquery.min',
-            'moment': 'moment/moment',
-            'PNotify': 'pnotify/dist/pnotify',
-            'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min',
+            angular: 'angular/angular',
+            'angular-route': 'angular-route/angular-route.min',
+            "angular-datatables": "angular-datatables/dist/angular-datatables",
+            bootstrap: 'bootstrap/dist/js/bootstrap.min',
+            'bootstrap-switch': 'bootstrap-switch/dist/js/bootstrap-switch.min',
+            'bootstrap-progressbar': 'bootstrap-progressbar/bootstrap-progressbar',
+            cropper: 'cropper/dist/cropper.min',
+            daterangepicker: "bootstrap-daterangepicker/daterangepicker",
             "datatables.net": 'datatables.net-bs/js/dataTables.bootstrap',
+            echarts: 'echarts/dist/echarts.min',
+            'iCheck': 'iCheck/icheck.min',
+            'ion.rangeSlider': 'ion.rangeSlider/js/ion.rangeSlider.min',
+            jquery: 'jquery/dist/jquery.min',
+            'jquery.blockUI': 'blockUI/jquery.blockUI',
+            'jquery.tagsinput': 'jquery.tagsinput/src/jquery.tagsinput',
+            'jquery-slimscroll': 'jquery-slimscroll/jquery.slimscroll.min',
+            'jquery-knob': 'jquery-knob/dist/jquery.knob.min',
+            'jquery.inputmask': 'jquery.inputmask/dist/min/jquery.inputmask.bundle.min',
+            nprogress: 'nprogress/nprogress',
+            moment: 'moment/moment',
+            'mjolnic-bootstrap-colorpicker': 'mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min',
+            PNotify: 'pnotify/dist/pnotify',
+            "promise-finally": "promise-finally/Main",
+            skycons: 'skycons/skycons',
+            select2: 'select2/dist/js/select2.full.min',
+            sweetalert2: 'sweetalert2/dist/sweetalert2',
+            parsleyjs: 'parsleyjs/dist/parsley.min',
+            'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
         },
         extensions: ['', '.js']
     },
@@ -68,10 +90,10 @@ module.exports = {
         }),
         new webpack.optimize.UglifyJsPlugin({
             debug: true,
-            minimize: true,
+            minimize: false,
             sourceMap: true,
             output: {
-                comments: false
+                comments: true
             },
             compressor: {
                 warnings: false
