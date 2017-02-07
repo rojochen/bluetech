@@ -1,7 +1,7 @@
-define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel', 'datatables.net'], function (jquery, angular, moment, PNotify, jqueryMousewheel, datatables) {
+define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function (jquery, angular, moment, PNotify, jqueryMousewheel) {
     'use strict';
     console.log(angular);
-    global.angular = angular;
+    // global.angular = angular;
     var $ = jquery;
     global.jQuery = $;
     global.$ = $;
@@ -53,7 +53,6 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel', 'datatabl
     require("../../vendors/angular-route/angular-route.min.js");
     require("../../vendors/angular-datatables/dist/angular-datatables.min.js");
     angular.module('bluetech', ['ngRoute', 'datatables']);
-    var app = angular.module('bluetech', []);
 
-    return app;
+    return angular;
 });
