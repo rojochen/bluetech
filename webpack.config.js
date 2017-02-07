@@ -47,14 +47,15 @@ module.exports = {
         extensions: ['', '.js']
     },
     module: {
-        loaders: [{
-                test: /\.js$/,
-                exclude: /(node_modules|vendors)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            },
+        loaders: [
+            // {
+            //     test: /\.js$/,
+            //     exclude: /(node_modules|vendors)/,
+            //     loader: 'babel-loader',
+            //     query: {
+            //         presets: ['es2015']
+            //     }
+            // },
             {
                 test: /\.(png|gif)$/,
                 loader: 'url-loader?limit=100000'
@@ -84,9 +85,7 @@ module.exports = {
             'root.jQuery': 'jquery',
             'global.jQuery': 'jquery',
             'global.$': 'jquery',
-            'window.$': 'jquery',
-            'angular': 'angular',
-            'window.angular': 'angular'
+            'window.$': 'jquery'
         }),
         new webpack.optimize.UglifyJsPlugin({
             debug: true,
