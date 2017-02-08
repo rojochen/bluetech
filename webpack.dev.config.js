@@ -49,7 +49,7 @@ module.exports = {
     module: {
         loaders: [{
                 test: /\.js$/,
-                exclude: /(node_modules|vendors)/,
+                exclude: /(node_modules)/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
@@ -60,10 +60,10 @@ module.exports = {
                 loader: 'url-loader?limit=100000'
             }, {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css?minimize!sass")
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             }, {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css?minimize!sass")
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             }, {
                 test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
                 loader: "file-loader?name=../css/img/[name].[ext]"
@@ -77,21 +77,19 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            debug: true,
-            minimize: false,
-            sourceMap: true,
-            output: {
-                comments: true
-            },
-            compressor: {
-                warnings: false
+        new webpack.optimize.DedupePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(true),
-        new ExtractTextPlugin("../css/bluetech.css", {
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new ExtractTextPlugin("../css/bluetech.min.css", {
             allChunks: true
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
         })
     ]
 };
