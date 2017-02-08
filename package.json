@@ -1,9 +1,12 @@
 {
   "name": "bluetech",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-dev": "webpack --config webpack.dev.config.js --progress --profile --colors",
+    "build-pro": "webpack --config webpack.pro.config.js --progress --profile --colors",
+    "build-all": "webpack --config webpack.pro.config.js --progress --profile --colors && webpack --config webpack.dev.config.js --progress --profile --colors"
   },
   "repository": {
     "type": "git",
@@ -48,7 +51,5 @@
     "webpack": "^1.14.0",
     "webpack-stream": "^3.2.0"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }

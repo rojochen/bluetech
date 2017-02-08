@@ -60,10 +60,10 @@ module.exports = {
                 loader: 'url-loader?limit=100000'
             }, {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css?minimize!sass")
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             }, {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css?minimize!sass")
+                loader: ExtractTextPlugin.extract("style", "css!sass")
             }, {
                 test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
                 loader: "file-loader?name=../css/img/[name].[ext]"
@@ -77,21 +77,25 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            debug: true,
-            minimize: false,
-            sourceMap: true,
-            output: {
-                comments: true
-            },
-            compressor: {
-                warnings: false
+        new webpack.optimize.DedupePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(true),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new ExtractTextPlugin("../css/bluetech.css", {
             allChunks: true
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            beautify: true,
+            minimize: true,
+            sourceMap: true,
+            compress: {
+                drop_console: true
+            },
+            mangle: {
+                except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+            }
         })
     ]
 };
