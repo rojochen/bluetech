@@ -1,16 +1,20 @@
 {
   "name": "bluetech",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-dev": "webpack --config webpack.dev.config.js --progress --profile --colors",
     "build-pro": "webpack --config webpack.pro.config.js --progress --profile --colors",
-    "build-all": "webpack --config webpack.pro.config.js --progress --profile --colors && webpack --config webpack.dev.config.js --progress --profile --colors"
+    "build-all": "webpack --config webpack.pro.config.js --progress --profile --colors && webpack --config webpack.dev.config.js --progress --profile --colors",
+    "download": "npm i && bower clear cache && bower install"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rojochen/bluetech.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rojochen/bluetech/issues"
   },
   "keywords": [
     "bluetech"
@@ -19,6 +23,9 @@
   "contributors": [
     ""
   ],
+  "homepage": {
+    "url": "https://github.com/rojochen/bluetech"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.22.1",
