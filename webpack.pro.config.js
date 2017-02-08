@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: "./dist/js",
-        filename: "[name].js",
+        filename: "[name].min.js",
         library: 'bluetech',
     },
     resolve: {
@@ -83,11 +83,11 @@ module.exports = {
             }
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
-        new ExtractTextPlugin("../css/bluetech.css", {
+        new ExtractTextPlugin("../css/bluetech.min.css", {
             allChunks: true
         }),
         new webpack.optimize.UglifyJsPlugin({
-            minimize: false,
+            minimize: true,
             sourceMap: true,
             compress: {
                 drop_console: true
