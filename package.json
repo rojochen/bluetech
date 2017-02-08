@@ -1,6 +1,6 @@
 {
   "name": "bluetech",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -49,8 +49,7 @@
     "url-loader": "^0.5.7",
     "vinyl-named": "^1.1.0",
     "webpack": "^1.14.0",
-    "webpack-stream": "^3.2.0",
-    "webpack-uglify-js-plugin": "^1.1.9"
+    "webpack-stream": "^3.2.0"
   },
   "dependencies": {}
 }
