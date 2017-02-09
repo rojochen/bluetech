@@ -50,9 +50,9 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function
 
 
     // angular
-    require("../../vendors/angular-route/angular-route.min.js");
-    require("../../vendors/angular-datatables/dist/angular-datatables.min.js");
-    angular.module('bluetech', ['ngRoute', 'datatables']);
+    // require("../../vendors/angular-route/angular-route.min.js");
+    // require("../../vendors/angular-datatables/dist/angular-datatables.min.js");
+    angular.module('bluetech', []);
 
     return angular;
 });
