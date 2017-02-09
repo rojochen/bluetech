@@ -15,12 +15,12 @@ Build Bluetech dev Library
     npm run build-dev
 
 
-Build Bluetech dev Library
+Build Bluetech pro Library
 -----------
 
     npm run build-pro
 
-Build Bluetech dev Library
+Build Bluetech  Library
 -----------
 
     npm run build-all
