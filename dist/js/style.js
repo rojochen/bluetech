@@ -30,34 +30,34 @@ var bluetech = function(e) {
     return e;
 }({
     0: function(module, exports, __webpack_require__) {
-        eval("\"use strict\";\n\n__webpack_require__(115);\n__webpack_require__(122);\n__webpack_require__(130);\n\n__webpack_require__(124);\n__webpack_require__(113);\n__webpack_require__(123);\n__webpack_require__(133);\n__webpack_require__(136);\n__webpack_require__(134);\n__webpack_require__(129);\n__webpack_require__(125);\n__webpack_require__(126);\n__webpack_require__(128);\n__webpack_require__(116);\n__webpack_require__(132);\n__webpack_require__(131);\n//require(\"../../vendors/pnotify/dist/pnotify.nonblock.css\");\n__webpack_require__(117);\n__webpack_require__(118);\n__webpack_require__(119);\n__webpack_require__(120);\n__webpack_require__(121);\n__webpack_require__(114);\n__webpack_require__(135);\n__webpack_require__(111);\n//  var layer= require('../../vendors/layer/build/layer.js');\n\n// require('../../vendors/ng-table/dist/ng-table.css');\n\n\n//left mune scrollbar\n__webpack_require__(127);\n\n__webpack_require__(112);\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/config/style.js\n// module id = 0\n// module chunks = 1\n//# sourceURL=webpack:///./src/config/style.js?");
+        eval("\"use strict\";\n\n__webpack_require__(117);\n__webpack_require__(124);\n__webpack_require__(132);\n\n__webpack_require__(126);\n__webpack_require__(115);\n__webpack_require__(125);\n__webpack_require__(135);\n__webpack_require__(138);\n__webpack_require__(136);\n__webpack_require__(131);\n__webpack_require__(127);\n__webpack_require__(128);\n__webpack_require__(130);\n__webpack_require__(118);\n__webpack_require__(134);\n__webpack_require__(133);\n//require(\"../../vendors/pnotify/dist/pnotify.nonblock.css\");\n__webpack_require__(119);\n__webpack_require__(120);\n__webpack_require__(121);\n__webpack_require__(122);\n__webpack_require__(123);\n__webpack_require__(116);\n__webpack_require__(137);\n__webpack_require__(113);\n//  var layer= require('../../vendors/layer/build/layer.js');\n\n// require('../../vendors/ng-table/dist/ng-table.css');\n\n\n//left mune scrollbar\n__webpack_require__(129);\n\n__webpack_require__(114);\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/config/style.js\n// module id = 0\n// module chunks = 1\n//# sourceURL=webpack:///./src/config/style.js?");
     },
-    111: function(module, exports) {
-        eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/css/layer/default/layer.css\n// module id = 111\n// module chunks = 1\n//# sourceURL=webpack:///./src/css/layer/default/layer.css?");
+    113: function(module, exports) {
+        eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/css/layer/default/layer.css\n// module id = 113\n// module chunks = 1\n//# sourceURL=webpack:///./src/css/layer/default/layer.css?");
     },
-    112: 111,
-    113: 111,
-    114: 111,
-    115: 111,
-    116: 111,
-    117: 111,
-    118: 111,
-    119: 111,
-    120: 111,
-    121: 111,
-    122: 111,
-    123: 111,
-    124: 111,
-    125: 111,
-    126: 111,
-    127: 111,
-    128: 111,
-    129: 111,
-    130: 111,
-    131: 111,
-    132: 111,
-    133: 111,
-    134: 111,
-    135: 111,
-    136: 111
+    114: 113,
+    115: 113,
+    116: 113,
+    117: 113,
+    118: 113,
+    119: 113,
+    120: 113,
+    121: 113,
+    122: 113,
+    123: 113,
+    124: 113,
+    125: 113,
+    126: 113,
+    127: 113,
+    128: 113,
+    129: 113,
+    130: 113,
+    131: 113,
+    132: 113,
+    133: 113,
+    134: 113,
+    135: 113,
+    136: 113,
+    137: 113,
+    138: 113
 }));
