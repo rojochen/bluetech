@@ -16,6 +16,7 @@ module.exports = {
         libraryTarget: "amd", // defined with AMD defined method
     },
     resolveLoader: {
+        // 讓loader不用打
         moduleExtensions: ['-loader']
     },
     module: {
