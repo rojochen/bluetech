@@ -11,8 +11,8 @@ module.exports = {
         style: `${__dirname}/src/config/style.js`
     },
     output: {
-        path: path.resolve(__dirname, "dist"),
-        filename: "[name].min.js",
+        path: path.resolve(__dirname, "dist/js"),
+        filename: "[name].js",
         library: 'bluetech',
         libraryTarget: "amd", // defined with AMD defined method
     },
@@ -61,7 +61,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|woff|svg|ttf|png|eot)([\?]?.*)$/,
-                loader: "file?name=css/img/[name].[ext]"
+                loader: "file?name=../css/img/[name].[ext]"
             },
             {
                 test: /[\/\\]angular\.js$/,
@@ -121,7 +121,7 @@ module.exports = {
             }
         }),
         new ExtractTextPlugin({
-            filename: "css/bluetech.min.css",
+            filename: "../css/bluetech.min.css",
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
