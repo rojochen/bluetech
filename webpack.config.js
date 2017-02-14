@@ -1,5 +1,8 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const path = require('path');
+const DashboardPlugin = require("webpack-dashboard/plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
     cache: true,
     devtool: 'eval',
@@ -8,12 +11,46 @@ module.exports = {
         style: "./src/config/style.js"
     },
     output: {
-        path: "./dist/js",
+        path: path.resolve(__dirname, "dist"),
         filename: "[name].js",
-        library: 'bluetech'
+        library: 'bluetech',
+        libraryTarget: "amd", // defined with AMD defined method
+    },
+    module: {
+        rules: [{
+                test: /\.js$/,
+                exclude: /(node_modules|vendors)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.(png|gif)$/,
+                loader: 'url-loader?limit=100000'
+            }, {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style", "css!sass")
+            }, {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract("style", "css!sass")
+            }, {
+                test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
+                loader: "file-loader?name=../css/img/[name].[ext]"
+            }, {
+                test: /[\/\\]angular\.js$/,
+                loader: "exports?window.angular"
+            }, {
+                test: /pnotify.*\.js$/,
+                loader: "imports?define=>false,global=>window"
+            }
+        ]
     },
     resolve: {
-        modulesDirectories: ['vendors'],
+        modules: [
+            "node_modules"
+        ],
+        extensions: [".js", ".json", ".jsx", ".css"],
         alias: {
             angular: 'angular/angular',
             'angular-route': 'angular-route/angular-route.min',
@@ -43,59 +80,21 @@ module.exports = {
             sweetalert2: 'sweetalert2/dist/sweetalert2',
             parsleyjs: 'parsleyjs/dist/parsley.min',
             'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
-        },
-        extensions: ['', '.js']
-    },
-    module: {
-        loaders: [{
-                test: /\.js$/,
-                exclude: /(node_modules|vendors)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            },
-            {
-                test: /\.(png|gif)$/,
-                loader: 'url-loader?limit=100000'
-            }, {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
-                test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
-                loader: "file-loader?name=../css/img/[name].[ext]"
-            }, {
-                test: /[\/\\]angular\.js$/,
-                loader: "exports?window.angular"
-            }, {
-                test: /pnotify.*\.js$/,
-                loader: "imports?define=>false,global=>window"
-            }
-        ]
+        }
     },
     plugins: [
-        new webpack.optimize.DedupePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: false,
             }
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new ExtractTextPlugin("../css/bluetech.css", {
             allChunks: true
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            beautify: true,
-            minimize: true,
-            sourceMap: true,
-            compress: {
-                drop_console: true
-            },
-            mangle: {
-                except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
-            }
-        })
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"production"',
+        }),
     ]
-};
+
+}
