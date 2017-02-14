@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
     cache: true,
@@ -119,20 +120,27 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new ExtractTextPlugin({
             filename: "css/bluetech.css",
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
             beautify: true,
-            minimize: true,
             sourceMap: true,
             compress: {
                 drop_console: true
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+            }
+        }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
+        new ImageminPlugin({
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '95-100'
             }
         })
     ]
