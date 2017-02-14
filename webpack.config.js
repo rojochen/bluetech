@@ -36,7 +36,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style',
+                    fallback: 'style',
                     loader: [{
                         loader: 'css',
                         query: {
@@ -49,7 +49,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style',
+                    fallback: 'style',
                     loader: [{
                         loader: 'css',
                         query: {
