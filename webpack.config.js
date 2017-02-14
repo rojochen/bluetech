@@ -1,6 +1,5 @@
 const webpack = require("webpack");
 const path = require('path');
-// var DashboardPlugin = require("webpack-dashboard/plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
