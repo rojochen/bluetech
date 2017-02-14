@@ -142,7 +142,8 @@ module.exports = {
             pngquant: {
                 quality: '95-100'
             }
-        })
+        }),
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/)
     ]
 
 }
