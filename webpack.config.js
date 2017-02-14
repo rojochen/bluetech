@@ -1,14 +1,14 @@
-const webpack = require("webpack");
-const path = require('path');
-const DashboardPlugin = require("webpack-dashboard/plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require("webpack");
+var path = require('path');
+// var DashboardPlugin = require("webpack-dashboard/plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        bluetech: "./src/config/main.js",
-        style: "./src/config/style.js"
+        bluetech: __dirname + "/src/config/main.js",
+        style: __dirname + "/src/config/style.js"
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -28,27 +28,64 @@ module.exports = {
             {
                 test: /\.(png|gif)$/,
                 loader: 'url-loader?limit=100000'
-            }, {
+            },
+            {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [{
+                        loader: 'css-loader',
+                        query: {
+                            modules: false,
+                            sourceMaps: true
+                        }
+                    }, "sass-loader"]
+                })
+            },
+            {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [{
+                        loader: 'css-loader',
+                        query: {
+                            modules: false,
+                            sourceMaps: true
+                        }
+                    }, "sass-loader"]
+                })
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    fallbackLoader: 'style-loader',
+                    loader: [{
+                        loader: 'css-loader',
+                        query: {
+                            modules: false,
+                            sourceMaps: true
+                        },
+                        loader: 'sass-loader'
+                    }]
+                })
+            },
+            {
                 test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
                 loader: "file-loader?name=../css/img/[name].[ext]"
-            }, {
+            },
+            {
                 test: /[\/\\]angular\.js$/,
-                loader: "exports?window.angular"
-            }, {
+                loader: "exports-loader?window.angular"
+            },
+            {
                 test: /pnotify.*\.js$/,
-                loader: "imports?define=>false,global=>window"
+                loader: "imports-loader?define=>false,global=>window"
             }
         ]
     },
     resolve: {
         modules: [
-            "node_modules"
+            "vendors"
         ],
         extensions: [".js", ".json", ".jsx", ".css"],
         alias: {
@@ -83,18 +120,27 @@ module.exports = {
         }
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_console: false,
+        new webpack.optimize.DedupePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new ExtractTextPlugin("../css/bluetech.css", {
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new ExtractTextPlugin({
+            filename: "../css/bluetech.css",
+            disable: false,
             allChunks: true
-        }),
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"production"',
-        }),
+        }), new webpack.optimize.UglifyJsPlugin({
+            beautify: true,
+            minimize: true,
+            sourceMap: true,
+            compress: {
+                drop_console: true
+            },
+            mangle: {
+                except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+            }
+        })
     ]
 
 }
