@@ -1,14 +1,14 @@
-var webpack = require("webpack");
-var path = require('path');
+const webpack = require("webpack");
+const path = require('path');
 // var DashboardPlugin = require("webpack-dashboard/plugin");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        bluetech: __dirname + "/src/config/main.js",
-        style: __dirname + "/src/config/style.js"
+        bluetech: `${__dirname}/src/config/main.js`,
+        style: `${__dirname}/src/config/style.js`
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -16,73 +16,67 @@ module.exports = {
         library: 'bluetech',
         libraryTarget: "amd", // defined with AMD defined method
     },
+    resolveLoader: {
+        moduleExtensions: ['-loader']
+    },
     module: {
         rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules|vendors)/,
-                loader: 'babel-loader',
+                loader: 'babel',
                 query: {
                     presets: ['es2015']
                 }
             },
             {
                 test: /\.(png|gif)$/,
-                loader: 'url-loader?limit=100000'
+                loader: 'url?limit=100000'
             },
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
+                    fallbackLoader: 'style',
                     loader: [{
-                        loader: 'css-loader',
+                        loader: 'css',
                         query: {
                             modules: false,
                             sourceMaps: true
                         }
-                    }, "sass-loader"]
+                    }, "sass"]
                 })
             },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
+                    fallbackLoader: 'style',
                     loader: [{
-                        loader: 'css-loader',
+                        loader: 'css',
                         query: {
                             modules: false,
                             sourceMaps: true
                         }
-                    }, "sass-loader"]
-                })
-            },
-            {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
-                    fallbackLoader: 'style-loader',
-                    loader: [{
-                        loader: 'css-loader',
-                        query: {
-                            modules: false,
-                            sourceMaps: true
-                        },
-                        loader: 'sass-loader'
-                    }]
+                    }, "sass"]
                 })
             },
             {
                 test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
-                loader: "file-loader?name=css/img/[name].[ext]"
+                loader: "file?name=css/img/[name].[ext]"
             },
             {
                 test: /[\/\\]angular\.js$/,
-                loader: "exports-loader?window.angular"
+                loader: "exports?window.angular"
             },
             {
                 test: /pnotify.*\.js$/,
-                loader: "imports-loader?define=>false,global=>window"
+                loader: "imports?define=>false,global=>window"
             }
         ]
     },
+    //禁止显示webpack的build.js太大的提示
+    performance: {
+        hints: false
+    },
+
     resolve: {
         modules: [
             "vendors"
