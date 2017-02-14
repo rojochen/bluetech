@@ -71,7 +71,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
-                loader: "file-loader?name=../css/img/[name].[ext]"
+                loader: "file-loader?name=css/img/[name].[ext]"
             },
             {
                 test: /[\/\\]angular\.js$/,
@@ -127,7 +127,7 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new ExtractTextPlugin({
-            filename: "../css/bluetech.css",
+            filename: "css/bluetech.css",
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
