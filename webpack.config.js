@@ -125,7 +125,7 @@ module.exports = {
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
-            beautify: true,
+            beautify: false,
             sourceMap: true,
             compress: {
                 drop_console: true
