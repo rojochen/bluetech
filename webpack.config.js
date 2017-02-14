@@ -12,7 +12,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].js",
+        filename: "[name].min.js",
         library: 'bluetech',
         libraryTarget: "amd", // defined with AMD defined method
     },
@@ -121,7 +121,7 @@ module.exports = {
             }
         }),
         new ExtractTextPlugin({
-            filename: "css/bluetech.css",
+            filename: "css/bluetech.min.css",
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
