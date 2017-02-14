@@ -60,7 +60,7 @@ module.exports = {
                 })
             },
             {
-                test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
+                test: /\.(jpg|woff|svg|ttf|png|eot)([\?]?.*)$/,
                 loader: "file?name=css/img/[name].[ext]"
             },
             {
