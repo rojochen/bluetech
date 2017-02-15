@@ -14,8 +14,8 @@ module.exports = {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].js",
         library: 'bluetech',
-        libraryTarget: "amd", // defined with AMD defined method
-    },
+        libraryTarget: "umd", // defined with AMD defined method
+    },    
     resolveLoader: {
         // 讓loader不用打
         moduleExtensions: ['-loader']
@@ -77,7 +77,7 @@ module.exports = {
     performance: {
         hints: false
     },
-
+    target: "web", 
     resolve: {
         modules: [
             "vendors"
@@ -127,16 +127,18 @@ module.exports = {
         }), new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             sourceMap: true,
+            comments:false,
             compress: {
-                drop_console: true
+                drop_console: false,
+                sequences:false
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
             }
         }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
-        }),
+        // new webpack.LoaderOptionsPlugin({
+        //     minimize: true
+        // }),
         new ImageminPlugin({
             disable: process.env.NODE_ENV !== 'production', // Disable during development
             pngquant: {
