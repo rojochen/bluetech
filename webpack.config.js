@@ -148,10 +148,7 @@ module.exports = {
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/),
         new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
-
-            filename: "bluetech.js",
             // (Give the chunk a different name)
-
             minChunks: Infinity,
             children: true,
             async: true,
