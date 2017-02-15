@@ -115,11 +115,11 @@ module.exports = {
         }
     },
     plugins: [
-        new webpack.optimize.DedupePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
+        // new webpack.optimize.DedupePlugin({
+        //     'process.env': {
+        //         'NODE_ENV': JSON.stringify('production')
+        //     }
+        // }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
             disable: false,
