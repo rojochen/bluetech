@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: "./dist/js",
         filename: "[name].js",
-        library: 'bluetech',
+        library: 'bluetech'
     },
     resolve: {
         modulesDirectories: ['vendors'],
