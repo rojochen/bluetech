@@ -126,11 +126,16 @@ module.exports = {
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
             beautify: false,
-            sourceMap: true,
+            sourceMap: false,
+            // 删除所有的注释
             comments: false,
             compress: {
-                drop_console: false,
-                sequences: false
+                // 在UglifyJs删除没有用到的代码时不输出警告
+                warnings: false,
+                drop_console: true,
+                // 内嵌定义了但是只用到一次的变量
+                collapse_vars: true,
+                reduce_vars: true,
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
@@ -149,7 +154,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
             // (Give the chunk a different name)
-            minChunks: Infinity,
+            minChunks: 2,
             children: true,
             async: true,
             // (with more entries, this ensures that no other module
