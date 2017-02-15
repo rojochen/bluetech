@@ -154,7 +154,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
             // (Give the chunk a different name)
-            minChunks: 2,
+            minChunks: Infinity,
             children: true,
             async: true,
             // (with more entries, this ensures that no other module
