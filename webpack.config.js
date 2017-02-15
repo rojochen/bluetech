@@ -15,7 +15,7 @@ module.exports = {
         filename: "[name].js",
         library: 'bluetech',
         libraryTarget: "umd", // defined with AMD defined method
-    },    
+    },
     resolveLoader: {
         // 讓loader不用打
         moduleExtensions: ['-loader']
@@ -77,7 +77,7 @@ module.exports = {
     performance: {
         hints: false
     },
-    target: "web", 
+    target: "web",
     resolve: {
         modules: [
             "vendors"
@@ -127,10 +127,10 @@ module.exports = {
         }), new webpack.optimize.UglifyJsPlugin({
             beautify: false,
             sourceMap: true,
-            comments:false,
+            comments: false,
             compress: {
                 drop_console: false,
-                sequences:false
+                sequences: false
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
@@ -145,7 +145,19 @@ module.exports = {
                 quality: '95-100'
             }
         }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/)
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "bluetech",
+
+            filename: "bluetech.js",
+            // (Give the chunk a different name)
+
+            minChunks: Infinity,
+            children: true,
+            async: true,
+            // (with more entries, this ensures that no other module
+            //  goes into the vendor chunk)
+        })
     ]
 
 }
