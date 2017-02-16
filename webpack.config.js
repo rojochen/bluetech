@@ -2,8 +2,9 @@ const webpack = require("webpack");
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const nodeEnvironment = process.env.NODE_ENV;
 
-module.exports = {
+const config = {
     cache: true,
     devtool: 'eval',
     entry: {
@@ -115,43 +116,53 @@ module.exports = {
         }
     },
     plugins: [
-        // new webpack.optimize.DedupePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
-        new ExtractTextPlugin({
-            filename: "../css/bluetech.min.css",
-            disable: false,
-            allChunks: true
-        }), new webpack.optimize.UglifyJsPlugin({
-            beautify: false,
-            sourceMap: false,
-            // 删除所有的注释
-            comments: false,
-            compress: {
-                // 在UglifyJs删除没有用到的代码时不输出警告
-                warnings: false,
-                drop_console: true,
-                // 内嵌定义了但是只用到一次的变量
-                collapse_vars: true,
-                reduce_vars: true,
-            },
-            mangle: {
-                except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
-            }
-        }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true
-        // }),
-        new ImageminPlugin({
-            disable: process.env.NODE_ENV !== 'production', // Disable during development
-            pngquant: {
-                quality: '95-100'
-            }
-        }),
-        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/),
-        new webpack.optimize.CommonsChunkPlugin({
+
+    ]
+
+}
+
+
+switch (nodeEnvironment) {
+    case 'production':
+        config.devtool = 'eval';
+        config.plugins.push(
+            new ExtractTextPlugin({
+                filename: "../css/bluetech.min.css",
+                disable: false,
+                allChunks: true
+            }), new webpack.optimize.UglifyJsPlugin({
+                beautify: false,
+                sourceMap: false,
+                // 删除所有的注释
+                comments: false,
+                compress: {
+                    // 在UglifyJs删除没有用到的代码时不输出警告
+                    warnings: false,
+                    drop_console: true,
+                    // 内嵌定义了但是只用到一次的变量
+                    collapse_vars: true,
+                    reduce_vars: true,
+                },
+                mangle: {
+                    except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
+                }
+            })
+        );
+        config.plugins.push(
+            new webpack.LoaderOptionsPlugin({
+                minimize: true
+            })
+        );
+        config.plugins.push(
+            new ImageminPlugin({
+                disable: process.env.NODE_ENV !== 'production', // Disable during development
+                pngquant: {
+                    quality: '95-100'
+                }
+            })
+        );
+        config.plugins.push(new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/));
+        config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
             // (Give the chunk a different name)
             minChunks: Infinity,
@@ -159,7 +170,20 @@ module.exports = {
             async: true,
             // (with more entries, this ensures that no other module
             //  goes into the vendor chunk)
-        })
-    ]
+        }));
+        break;
 
+    case 'test':
+        config.entry = './index.js';
+        break;
+
+    case 'development':
+        config.entry = ['./index.js', 'webpack/hot/dev-server'];
+        config.devtool = 'source-map';
+        break;
+
+    default:
+        console.warn('Unknown or Undefigned Node Environment. Please refer to package.json for available build commands.');
 }
+
+module.exports = config;
