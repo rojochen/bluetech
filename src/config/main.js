@@ -1,5 +1,5 @@
 define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery, angular, moment, PNotify, jqueryMousewheel) => {
-    console.log("%cBlue welcome bluetech!!");
+    console.log("Blue welcome bluetech!!");
 
     const $ = jquery;
     global.jQuery = $;
