@@ -77,7 +77,7 @@
     "animate.css": "^3.5.1",
     "jqvmap": "https://github.com/christianesperar/jqvmap.git#master",
     "DateJS": "^1.0.0-rc3",
-    "iCheck": "^1.0.2",
+    "iCheck": "1.0.1",
     "moment": "~2.14.1",
     "sweetalert2": "~4.1.7",
     "blockUI": "*",
