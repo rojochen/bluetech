@@ -1,11 +1,10 @@
-define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function (jquery, angular, moment, PNotify, jqueryMousewheel) {
-    'use strict';
+define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery, angular, moment, PNotify, jqueryMousewheel) => {
     console.log("%cBlue welcome bluetech!!");
 
-    var $ = jquery;
+    const $ = jquery;
     global.jQuery = $;
     global.$ = $;
-    jQuery = $;
+    // jQuery = $;
     window.jQuery = $;
     window.$ = $;
     global.moment = moment;
@@ -21,7 +20,7 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function
     require("../../vendors/jquery-mousewheel/jquery.mousewheel.min.js");
     require("../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js");
     //global.echarts = require("../../vendors/echarts/dist/echarts.min.js");
-    require("../../vendors/iCheck/icheck.min.js");
+    require("../../vendors/iCheck/icheck.js");
     require("../../vendors/skycons/skycons.js");
     require("../../vendors/bootstrap-daterangepicker/daterangepicker.js");
     require('../../vendors/blockUI/jquery.blockUI.js');
@@ -40,7 +39,7 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], function
     require('../../vendors/jquery-knob/dist/jquery.knob.min.js');
     require('../../vendors/cropper/dist/cropper.min.js');
     require("../../vendors/promise-finally/Main.js");
-    var layer = require('../../vendors/layer/build/layer.js');
+    const layer = require('../../vendors/layer/build/layer.js');
     layer.config({
         path: false
     });
