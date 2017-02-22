@@ -115,11 +115,6 @@ module.exports = {
         }
     },
     plugins: [
-        // new webpack.optimize.DedupePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
             disable: false,
@@ -141,9 +136,9 @@ module.exports = {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
             }
         }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true
-        // }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
         new ImageminPlugin({
             disable: process.env.NODE_ENV !== 'production', // Disable during development
             pngquant: {

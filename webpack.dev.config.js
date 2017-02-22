@@ -1,19 +1,88 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require("webpack");
+const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+
 module.exports = {
     cache: true,
     devtool: 'eval',
     entry: {
-        bluetech: "./src/config/main.js",
-        style: "./src/config/style.js"
+        bluetech: `${__dirname}/src/config/main.js`,
+        style: `${__dirname}/src/config/style.js`
     },
     output: {
-        path: "./dist/js",
+        path: path.resolve(__dirname, "dist/js"),
         filename: "[name].js",
-        library: 'bluetech'
+        library: 'bluetech',
+        libraryTarget: "umd", // defined with AMD defined method
     },
+    resolveLoader: {
+        // 讓loader不用打
+        moduleExtensions: ['-loader']
+    },
+    module: {
+        rules: [{
+                test: /\.js$/,
+                exclude: /(node_modules|vendors)/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.(png|gif)$/,
+                loader: 'url?limit=100000'
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style',
+                    loader: [{
+                        loader: 'css',
+                        query: {
+                            modules: false,
+                            sourceMaps: true
+                        }
+                    }, "sass"]
+                })
+            },
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style',
+                    loader: [{
+                        loader: 'css',
+                        query: {
+                            modules: false,
+                            sourceMaps: true
+                        }
+                    }, "sass"]
+                })
+            },
+            {
+                test: /\.(jpg|woff|svg|ttf|png|eot)([\?]?.*)$/,
+                loader: "file?name=../css/img/[name].[ext]"
+            },
+            {
+                test: /[\/\\]angular\.js$/,
+                loader: "exports?window.angular"
+            },
+            {
+                test: /pnotify.*\.js$/,
+                loader: "imports?define=>false,global=>window"
+            }
+        ]
+    },
+    //禁止显示webpack的build.js太大的提示
+    performance: {
+        hints: false
+    },
+    target: "web",
     resolve: {
-        modulesDirectories: ['vendors'],
+        modules: [
+            "vendors"
+        ],
+        extensions: [".js", ".json", ".jsx", ".css"],
         alias: {
             angular: 'angular/angular',
             'angular-route': 'angular-route/angular-route.min',
@@ -43,59 +112,49 @@ module.exports = {
             sweetalert2: 'sweetalert2/dist/sweetalert2',
             parsleyjs: 'parsleyjs/dist/parsley.min',
             'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
-        },
-        extensions: ['', '.js']
-    },
-    module: {
-        loaders: [{
-                test: /\.js$/,
-                exclude: /(node_modules|vendors)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            },
-            {
-                test: /\.(png|gif)$/,
-                loader: 'url-loader?limit=100000'
-            }, {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
-                test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style", "css!sass")
-            }, {
-                test: /\.(jpg|woff|svg|ttf|eot)([\?]?.*)$/,
-                loader: "file-loader?name=../css/img/[name].[ext]"
-            }, {
-                test: /[\/\\]angular\.js$/,
-                loader: "exports?window.angular"
-            }, {
-                test: /pnotify.*\.js$/,
-                loader: "imports?define=>false,global=>window"
-            }
-        ]
+        }
     },
     plugins: [
-        new webpack.optimize.DedupePlugin({
-            'process.env': {
-                'NODE_ENV': JSON.stringify('production')
-            }
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new ExtractTextPlugin("../css/bluetech.css", {
+        new ExtractTextPlugin({
+            filename: "../css/bluetech.css",
+            disable: false,
             allChunks: true
-        }),
-        new webpack.optimize.UglifyJsPlugin({
+        }), new webpack.optimize.UglifyJsPlugin({
             beautify: true,
-            minimize: true,
-            sourceMap: true,
+            sourceMap: false,
+            // 删除所有的注释
+            comments: false,
             compress: {
-                drop_console: true
+                // 在UglifyJs删除没有用到的代码时不输出警告
+                warnings: false,
+                drop_console: true,
+                // 内嵌定义了但是只用到一次的变量
+                collapse_vars: true,
+                reduce_vars: true,
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
             }
+        }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: false
+        }),
+        new ImageminPlugin({
+            disable: process.env.NODE_ENV !== 'production', // Disable during development
+            pngquant: {
+                quality: '95-100'
+            }
+        }),
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "bluetech",
+            // (Give the chunk a different name)
+            minChunks: Infinity,
+            children: true,
+            async: true,
+            // (with more entries, this ensures that no other module
+            //  goes into the vendor chunk)
         })
     ]
-};
+
+}
