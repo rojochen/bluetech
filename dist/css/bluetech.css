@@ -7881,8 +7881,8 @@ button.close {
 .iradio_flat-green.checked.disabled {
   background-position: -154px 0; }
 
-/* HiDPI support */
-@media (-o-min-device-pixel-ratio: 5 / 4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min-device-pixel-ratio: 1.5) {
   .icheckbox_flat-green,
   .iradio_flat-green {
     background-image: url(data:image/png;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICIuLi9jc3MvaW1nL2dyZWVuQDJ4LnBuZyI7);
