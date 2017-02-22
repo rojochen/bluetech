@@ -115,30 +115,30 @@ module.exports = {
         }
     },
     plugins: [
-        // new webpack.optimize.DedupePlugin({
-        //     'process.env': {
-        //         'NODE_ENV': JSON.stringify('production')
-        //     }
-        // }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
             beautify: false,
-            sourceMap: true,
+            sourceMap: false,
+            // 删除所有的注释
             comments: false,
             compress: {
-                drop_console: false,
-                sequences: false
+                // 在UglifyJs删除没有用到的代码时不输出警告
+                warnings: false,
+                drop_console: true,
+                // 内嵌定义了但是只用到一次的变量
+                collapse_vars: true,
+                reduce_vars: true,
             },
             mangle: {
                 except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
             }
         }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true
-        // }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
         new ImageminPlugin({
             disable: process.env.NODE_ENV !== 'production', // Disable during development
             pngquant: {

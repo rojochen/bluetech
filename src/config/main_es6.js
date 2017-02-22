@@ -20,7 +20,7 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery,
     require("../../vendors/jquery-mousewheel/jquery.mousewheel.min.js");
     require("../../vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js");
     //global.echarts = require("../../vendors/echarts/dist/echarts.min.js");
-    require("../../vendors/iCheck/icheck.js");
+    require("../../vendors/iCheck/icheck.min.js");
     require("../../vendors/skycons/skycons.js");
     require("../../vendors/bootstrap-daterangepicker/daterangepicker.js");
     require('../../vendors/blockUI/jquery.blockUI.js');
