@@ -54,10 +54,11 @@
 
 //     // return angular;
 // });
-
+import { ng as angular } from "angular";
 const $ = require("jquery");
 const moment = require("moment");
 const PNotify = require("PNotify");
+
 require("jquery-mousewheel");
 
 global.jQuery = $;
@@ -107,4 +108,4 @@ layer.config({
 // util
 require("../config/util.js");
 
-export default "bluetech";
+export default angular.module('bluetech',[]);

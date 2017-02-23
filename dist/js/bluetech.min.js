@@ -6,14 +6,14 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("angular"));
 	else if(typeof define === 'function' && define.amd)
-		define("bluetech", [], factory);
+		define("bluetech", ["angular"], factory);
 	else if(typeof exports === 'object')
-		exports["bluetech"] = factory();
+		exports["bluetech"] = factory(require("angular"));
 	else
-		root["bluetech"] = factory();
-})(this, function() {
+		root["bluetech"] = factory(root["angular"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_30__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 35);
+/******/ 	return __webpack_require__(__webpack_require__.s = 36);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1885,7 +1885,7 @@ module.exports = __webpack_amd_options__;
                 module && module.exports) {
             try {
                 oldLocale = globalLocale._abbr;
-                __webpack_require__(34)("./" + name);
+                __webpack_require__(35)("./" + name);
                 // because defineLocale currently also sets the global locale, we
                 // want to undo that for lazy loaded locales
                 locale_locales__getSetGlobalLocale(oldLocale);
@@ -4317,7 +4317,7 @@ module.exports = __webpack_amd_options__;
     return _moment;
 
 }));
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(34)(module)))
 
 /***/ }),
 /* 4 */
@@ -19817,9 +19817,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*! DataTables 1
 
 
 (function () {
-    __webpack_require__(30);
-    __webpack_require__(32);
     __webpack_require__(31);
+    __webpack_require__(33);
+    __webpack_require__(32);
 })();
 
 /***/ }),
@@ -26056,6 +26056,12 @@ if(this.$element.prop("multiple"))this.current(function(d){var e=[];a=[a],a.push
 
 /***/ }),
 /* 30 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_30__;
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26099,7 +26105,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26168,7 +26174,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26328,7 +26334,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -26356,7 +26362,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -26377,11 +26383,11 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 34;
+webpackContext.id = 35;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -26390,7 +26396,10 @@ webpackContext.id = 34;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-// define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery, angular, moment, PNotify, jqueryMousewheel) => {
+
+var _angular = __webpack_require__(30);
+
+var $ = __webpack_require__(0); // define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery, angular, moment, PNotify, jqueryMousewheel) => {
 //     console.log("Blue welcome bluetech!!");
 
 //     const $ = jquery;
@@ -26447,9 +26456,9 @@ Object.defineProperty(exports, "__esModule", {
 //     // return angular;
 // });
 
-var $ = __webpack_require__(0);
 var moment = __webpack_require__(3);
 var PNotify = __webpack_require__(4);
+
 __webpack_require__(1);
 
 global.jQuery = $;
@@ -26494,7 +26503,7 @@ layer.config({
 // util
 __webpack_require__(8);
 
-exports.default = "bluetech";
+exports.default = _angular.ng.module('bluetech', []);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ })
