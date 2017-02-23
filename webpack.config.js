@@ -6,7 +6,6 @@ const webpack = require("webpack"),
     '@version v' + pkg.version + '\n' +
     '@link ' + pkg.homepage + '\n' +
     '@license MIT License, http://www.opensource.org/licenses/MIT';
-console.log(pkg);
 module.exports = {
     cache: true,
     devtool: 'source-map',
@@ -28,6 +27,9 @@ module.exports = {
     },
     module: {
         rules: [{
+                test: /jquery\.js$/,
+                loader: "expose-loader?$!expose-loader?jQuery"
+            }, {
                 test: /\.js$/,
                 exclude: /(node_modules|vendors)/,
                 loader: 'babel',
@@ -91,32 +93,9 @@ module.exports = {
         extensions: [".js", ".json", ".jsx", ".css"],
         alias: {
             angular: 'angular/angular',
-            'angular-route': 'angular-route/angular-route.min',
-            "angular-datatables": "angular-datatables/dist/angular-datatables",
-            bootstrap: 'bootstrap/dist/js/bootstrap.min',
-            'bootstrap-switch': 'bootstrap-switch/dist/js/bootstrap-switch.min',
-            'bootstrap-progressbar': 'bootstrap-progressbar/bootstrap-progressbar',
-            cropper: 'cropper/dist/cropper.min',
-            daterangepicker: "bootstrap-daterangepicker/daterangepicker",
-            "datatables.net": 'datatables.net-bs/js/dataTables.bootstrap',
-            echarts: 'echarts/dist/echarts.min',
-            'iCheck': 'iCheck/icheck.min',
-            'ion.rangeSlider': 'ion.rangeSlider/js/ion.rangeSlider.min',
             jquery: 'jquery/dist/jquery.min',
-            'jquery.blockUI': 'blockUI/jquery.blockUI',
-            'jquery.tagsinput': 'jquery.tagsinput/src/jquery.tagsinput',
-            'jquery-slimscroll': 'jquery-slimscroll/jquery.slimscroll.min',
-            'jquery-knob': 'jquery-knob/dist/jquery.knob.min',
-            'jquery.inputmask': 'jquery.inputmask/dist/min/jquery.inputmask.bundle.min',
-            nprogress: 'nprogress/nprogress',
             moment: 'moment/moment',
-            'mjolnic-bootstrap-colorpicker': 'mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min',
             PNotify: 'pnotify/dist/pnotify',
-            "promise-finally": "promise-finally/Main",
-            skycons: 'skycons/skycons',
-            select2: 'select2/dist/js/select2.full.min',
-            sweetalert2: 'sweetalert2/dist/sweetalert2',
-            parsleyjs: 'parsleyjs/dist/parsley.min',
             'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
         }
     },
@@ -126,23 +105,14 @@ module.exports = {
             amd: 'angular',
             commonjs2: 'angular',
             commonjs: 'angular'
-        },
-        "jquery": {
-            $: 'jquery',
-            "global.jQuery": "jquery",
-            "global.$": "jquery",
-            "window.jQuery": "jquery",
-            "window.$": "jquery"
-        },
-        "moment": {
-            "global.moment": "moment"
-        },
-        "PNotify": {
-            "global.PNotify": "PNotify"
         }
-
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
             disable: false,

@@ -86,6 +86,9 @@ require('../../vendors/jquery-knob/dist/jquery.knob.min.js');
 require('../../vendors/cropper/dist/cropper.min.js');
 require("../../vendors/promise-finally/Main.js");
 
+global.moment = moment;
+global.PNotify = PNotify;
+
 
 const layer = require('../../vendors/layer/build/layer.js');
 layer.config({
