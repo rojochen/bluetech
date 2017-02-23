@@ -1,1 +1,281 @@
-!function(e,n){"object"==typeof exports&&"object"==typeof module?module.exports=n():"function"==typeof define&&define.amd?define([],n):"object"==typeof exports?exports.bluetech=n():e.bluetech=n()}(this,function(){return webpackJsonpbluetech([0],[,,,,,,,,,,function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/css/layer/default/layer.css\n// module id = 10\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/css/layer/default/layer.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css\n// module id = 11\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css\n// module id = 12\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/bootstrap/dist/css/bootstrap.min.css\n// module id = 13\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/bootstrap/dist/css/bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/cropper/dist/cropper.min.css\n// module id = 14\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/cropper/dist/cropper.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/datatables.net-bs/css/dataTables.bootstrap.min.css\n// module id = 15\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/datatables.net-bs/css/dataTables.bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css\n// module id = 16\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css\n// module id = 17\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css\n// module id = 18\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css\n// module id = 19\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/google-code-prettify/bin/prettify.min.css\n// module id = 20\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/google-code-prettify/bin/prettify.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/iCheck/skins/flat/green.css\n// module id = 21\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/iCheck/skins/flat/green.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/ion.rangeSlider/css/ion.rangeSlider.css\n// module id = 22\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/ion.rangeSlider/css/ion.rangeSlider.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css\n// module id = 23\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css\n// module id = 24\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/normalize-css/normalize.css\n// module id = 25\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/normalize-css/normalize.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/nprogress/nprogress.css\n// module id = 26\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/nprogress/nprogress.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/pnotify/dist/pnotify.buttons.css\n// module id = 27\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/pnotify/dist/pnotify.buttons.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/pnotify/dist/pnotify.css\n// module id = 28\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/pnotify/dist/pnotify.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/select2/dist/css/select2.min.css\n// module id = 29\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/select2/dist/css/select2.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/starrr/dist/starrr.css\n// module id = 30\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/starrr/dist/starrr.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/sweetalert2/dist/sweetalert2.min.css\n// module id = 31\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/sweetalert2/dist/sweetalert2.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/switchery/dist/switchery.min.css\n// module id = 32\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/switchery/dist/switchery.min.css?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/scss/custom.scss\n// module id = 33\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/scss/custom.scss?")},function(module,exports){eval("// removed by extract-text-webpack-plugin\n\n//////////////////\n// WEBPACK FOOTER\n// ./vendors/font-awesome/scss/font-awesome.scss\n// module id = 34\n// module chunks = 0\n\n//# sourceURL=webpack:///./vendors/font-awesome/scss/font-awesome.scss?")},,,,,,,,,,,,,,,,,,,,,,,,,,,,,function(module,exports,__webpack_require__){"use strict";eval("\n\n__webpack_require__(13);\n__webpack_require__(34);\n__webpack_require__(26);\n\n__webpack_require__(21);\n__webpack_require__(11);\n__webpack_require__(20);\n__webpack_require__(29);\n__webpack_require__(32);\n__webpack_require__(30);\n__webpack_require__(25);\n__webpack_require__(22);\n__webpack_require__(23);\n// require(\"../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css\");\n__webpack_require__(14);\n__webpack_require__(28);\n__webpack_require__(27);\n//require(\"../../vendors/pnotify/dist/pnotify.nonblock.css\");\n__webpack_require__(15);\n__webpack_require__(16);\n__webpack_require__(17);\n__webpack_require__(18);\n__webpack_require__(19);\n__webpack_require__(12);\n__webpack_require__(31);\n__webpack_require__(10);\n//  var layer= require('../../vendors/layer/build/layer.js');\n\n// require('../../vendors/ng-table/dist/ng-table.css');\n\n\n//left mune scrollbar\n__webpack_require__(24);\n\n__webpack_require__(33);\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/config/style.js\n// module id = 63\n// module chunks = 0\n\n//# sourceURL=webpack:///./src/config/style.js?")}],[63])});
+/*!
+ * Admin is a free to use Bootstrap admin template base on gentelella admin
+ * @version v0.1.6
+ * @link [object Object]
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("bluetech", [], factory);
+	else if(typeof exports === 'object')
+		exports["bluetech"] = factory();
+	else
+		root["bluetech"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+/******/
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 62);
+/******/ })
+/************************************************************************/
+/******/ (Array(37).concat([
+/* 37 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(40);
+__webpack_require__(61);
+__webpack_require__(53);
+
+__webpack_require__(48);
+__webpack_require__(38);
+__webpack_require__(47);
+__webpack_require__(56);
+__webpack_require__(59);
+__webpack_require__(57);
+__webpack_require__(52);
+__webpack_require__(49);
+__webpack_require__(50);
+// require("../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css");
+__webpack_require__(41);
+__webpack_require__(55);
+__webpack_require__(54);
+//require("../../vendors/pnotify/dist/pnotify.nonblock.css");
+__webpack_require__(42);
+__webpack_require__(43);
+__webpack_require__(44);
+__webpack_require__(45);
+__webpack_require__(46);
+__webpack_require__(39);
+__webpack_require__(58);
+__webpack_require__(37);
+//  var layer= require('../../vendors/layer/build/layer.js');
+
+// require('../../vendors/ng-table/dist/ng-table.css');
+
+
+//left mune scrollbar
+__webpack_require__(51);
+
+__webpack_require__(60);
+
+/***/ })
+/******/ ]));
+});
+//# sourceMappingURL=style.js.map
