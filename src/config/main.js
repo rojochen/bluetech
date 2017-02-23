@@ -50,9 +50,11 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery,
 
     // angular
 
-    angular.module('bluetech', []);
+    // angular.module('bluetech', []);
 
-    return angular;
+    // return angular;
+
+    export default "bluetech";
 });
 
 
