@@ -5,7 +5,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
     cache: true,
-    devtool: 'eval',
+    devtool: 'inline-source-map',
     entry: {
         bluetech: `${__dirname}/src/config/main.js`,
         style: `${__dirname}/src/config/style.js`
@@ -123,7 +123,7 @@ module.exports = {
             beautify: false,
             sourceMap: false,
             // 删除所有的注释
-            comments: false,
+            comments: true,
             compress: {
                 // 在UglifyJs删除没有用到的代码时不输出警告
                 warnings: false,
