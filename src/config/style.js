@@ -11,7 +11,7 @@ require("../../vendors/starrr/dist/starrr.css");
 require("../../vendors/normalize-css/normalize.css");
 require("../../vendors/ion.rangeSlider/css/ion.rangeSlider.css");
 require("../../vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css");
-require("../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css");
+// require("../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css");
 require("../../vendors/cropper/dist/cropper.min.css");
 require("../../vendors/pnotify/dist/pnotify.css");
 require("../../vendors/pnotify/dist/pnotify.buttons.css");

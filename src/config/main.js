@@ -34,7 +34,7 @@ define(['jquery', 'angular', 'moment', 'PNotify', 'jquery-mousewheel'], (jquery,
     require('../../vendors/pnotify/dist/pnotify.js');
     require('../../vendors/sweetalert2/dist/sweetalert2.js');
     require('../../vendors/bootstrap-switch/dist/js/bootstrap-switch.min.js');
-    require('../../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js');
+    // require('../../vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js');
     require('../../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js');
     require('../../vendors/jquery-knob/dist/jquery.knob.min.js');
     require('../../vendors/cropper/dist/cropper.min.js');
