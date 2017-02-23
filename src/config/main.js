@@ -54,7 +54,9 @@
 
 //     // return angular;
 // });
-import { ng as angular } from "angular";
+import {
+    angular
+} from "angular";
 const $ = require("jquery");
 const moment = require("moment");
 const PNotify = require("PNotify");
@@ -108,4 +110,4 @@ layer.config({
 // util
 require("../config/util.js");
 
-export default angular.module('bluetech',[]);
+export default angular.module('bluetech', []);
