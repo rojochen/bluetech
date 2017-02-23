@@ -1,20 +1,26 @@
-const webpack = require("webpack");
-const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-
+const webpack = require("webpack"),
+    path = require('path'),
+    ExtractTextPlugin = require("extract-text-webpack-plugin"),
+    pkg = require("./package.json"),
+    banner = pkg.description + '\n' +
+    '@version v' + pkg.version + '\n' +
+    '@link ' + pkg.homepage + '\n' +
+    '@license MIT License, http://www.opensource.org/licenses/MIT';
+console.log(pkg);
 module.exports = {
     cache: true,
-    devtool: 'eval',
+    devtool: 'source-map',
     entry: {
-        bluetech: `${__dirname}/src/config/main.js`,
-        style: `${__dirname}/src/config/style.js`
+        "bluetech": `${__dirname}/src/config/main.js`,
+        "bluetech.min": `${__dirname}/src/config/main.js`,
+        "style": `${__dirname}/src/config/style.js`
     },
     output: {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].js",
         library: 'bluetech',
-        libraryTarget: "umd", // defined with AMD defined method
+        libraryTarget: "umd2", // defined with AMD defined method
+        umdNamedDefine: true
     },
     resolveLoader: {
         // 讓loader不用打
@@ -41,7 +47,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -54,7 +60,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -119,42 +125,13 @@ module.exports = {
             filename: "../css/bluetech.min.css",
             disable: false,
             allChunks: true
-        }), new webpack.optimize.UglifyJsPlugin({
-            beautify: false,
-            sourceMap: false,
-            // 删除所有的注释
-            comments: false,
-            compress: {
-                // 在UglifyJs删除没有用到的代码时不输出警告
-                warnings: false,
-                drop_console: true,
-                // 内嵌定义了但是只用到一次的变量
-                collapse_vars: true,
-                reduce_vars: true,
-            },
-            mangle: {
-                except: ['$super', '$', 'exports', 'require', '$q', '$ocLazyLoad']
-            }
         }),
         new webpack.LoaderOptionsPlugin({
+            include: /\.min\.js$/,
             minimize: true
         }),
-        new ImageminPlugin({
-            disable: process.env.NODE_ENV !== 'production', // Disable during development
-            pngquant: {
-                quality: '95-100'
-            }
-        }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-tw/),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "bluetech",
-            // (Give the chunk a different name)
-            minChunks: Infinity,
-            children: true,
-            async: true,
-            // (with more entries, this ensures that no other module
-            //  goes into the vendor chunk)
-        })
+        new webpack.BannerPlugin(banner)
     ]
 
 }
