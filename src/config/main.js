@@ -110,4 +110,4 @@ layer.config({
 // util
 require("../config/util.js");
 
-export default angular.module('bluetech', []);
+export const bluetech = angular.module('bluetech', []);
