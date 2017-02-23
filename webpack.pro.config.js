@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].min.js",
         library: 'bluetech',
-        libraryTarget: "umd", // defined with AMD defined method
+        libraryTarget: "umd2", // defined with AMD defined method
     },
     resolveLoader: {
         // 讓loader不用打
@@ -41,7 +41,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -54,7 +54,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -149,9 +149,9 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
             // (Give the chunk a different name)
-            minChunks: Infinity,
-            children: true,
-            async: true,
+            minChunks: Infinity
+            // children: true,
+            // async: true,
             // (with more entries, this ensures that no other module
             //  goes into the vendor chunk)
         })
