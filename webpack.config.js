@@ -99,12 +99,12 @@ module.exports = {
         }
     },
     externals: {
-        "angular": {
-            root: 'angular',
-            amd: 'angular',
-            commonjs2: 'angular',
-            commonjs: 'angular'
-        }
+        // "angular": {
+        //     root: 'angular',
+        //     amd: 'angular',
+        //     commonjs2: 'angular',
+        //     commonjs: 'angular'
+        // }
     },
     plugins: [
         new ExtractTextPlugin({
