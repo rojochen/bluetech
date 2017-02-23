@@ -5,7 +5,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
     cache: true,
-    devtool: 'eval',
+    devtool: 'source-map',
     entry: {
         bluetech: `${__dirname}/src/config/main.js`,
         style: `${__dirname}/src/config/style.js`
@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].min.js",
         library: 'bluetech',
-        libraryTarget: "umd", // defined with AMD defined method
+        libraryTarget: "umd2", // defined with AMD defined method
     },
     resolveLoader: {
         // 讓loader不用打
@@ -41,7 +41,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -54,7 +54,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -123,7 +123,7 @@ module.exports = {
             beautify: false,
             sourceMap: false,
             // 删除所有的注释
-            comments: false,
+            comments: true,
             compress: {
                 // 在UglifyJs删除没有用到的代码时不输出警告
                 warnings: false,
@@ -149,9 +149,9 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: "bluetech",
             // (Give the chunk a different name)
-            minChunks: Infinity,
-            children: true,
-            async: true,
+            minChunks: Infinity
+            // children: true,
+            // async: true,
             // (with more entries, this ensures that no other module
             //  goes into the vendor chunk)
         })

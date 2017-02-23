@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].js",
         library: 'bluetech',
-        libraryTarget: "umd", // defined with AMD defined method
+        libraryTarget: "umd2", // defined with AMD defined method
     },
     resolveLoader: {
         // 讓loader不用打
@@ -41,7 +41,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -54,7 +54,7 @@ module.exports = {
                         loader: 'css',
                         query: {
                             modules: false,
-                            sourceMaps: true
+                            sourceMaps: false
                         }
                     }, "sass"]
                 })
@@ -120,7 +120,7 @@ module.exports = {
             disable: false,
             allChunks: true
         }), new webpack.optimize.UglifyJsPlugin({
-            beautify: true,
+            beautify: false,
             sourceMap: false,
             // 删除所有的注释
             comments: false,
@@ -150,8 +150,8 @@ module.exports = {
             name: "bluetech",
             // (Give the chunk a different name)
             minChunks: Infinity,
-            children: true,
-            async: true,
+            // children: true,
+            // async: true
             // (with more entries, this ensures that no other module
             //  goes into the vendor chunk)
         })
