@@ -28,7 +28,7 @@ module.exports = {
     module: {
         rules: [{
                 test: /jquery\.js$/,
-                loader: "expose-loader?$!expose-loader?jQuery"
+                use: "expose-loader?$!expose-loader?jQuery"
             }, {
                 test: /\.js$/,
                 exclude: /(node_modules|vendors)/,
@@ -39,11 +39,11 @@ module.exports = {
             },
             {
                 test: /\.(png|gif)$/,
-                loader: 'url?limit=100000'
+                use: 'url?limit=100000'
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
                     fallback: 'style',
                     loader: [{
                         loader: 'css',
@@ -56,7 +56,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({
                     fallback: 'style',
                     loader: [{
                         loader: 'css',
@@ -69,15 +69,15 @@ module.exports = {
             },
             {
                 test: /\.(jpg|woff|svg|ttf|png|eot)([\?]?.*)$/,
-                loader: "file?name=../css/img/[name].[ext]"
+                use: "file?name=../css/img/[name].[ext]"
             },
             {
                 test: /[\/\\]angular\.js$/,
-                loader: "exports?window.angular"
+                use: "exports?window.angular"
             },
             {
                 test: /pnotify.*\.js$/,
-                loader: "imports?define=>false,global=>window"
+                use: "imports?define=>false,global=>window"
             }
         ]
     },
@@ -111,7 +111,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'window.jQuery': 'jquery'
+            'window.jQuery': 'jquery',
         }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
