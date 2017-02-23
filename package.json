@@ -1,6 +1,6 @@
 {
   "name": "bluetech",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Admin is a free to use Bootstrap admin template base on gentelella admin",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
