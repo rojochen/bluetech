@@ -5,7 +5,7 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 module.exports = {
     cache: true,
-    devtool: 'inline-source-map',
+    devtool: 'eval',
     entry: {
         bluetech: `${__dirname}/src/config/main.js`,
         style: `${__dirname}/src/config/style.js`
