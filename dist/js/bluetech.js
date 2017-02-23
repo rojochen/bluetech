@@ -26396,6 +26396,7 @@ webpackContext.id = 35;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.bluetech = undefined;
 
 var _angular = __webpack_require__(30);
 
@@ -26503,7 +26504,7 @@ layer.config({
 // util
 __webpack_require__(8);
 
-exports.default = _angular.angular.module('bluetech', []);
+var bluetech = exports.bluetech = _angular.angular.module('bluetech', []);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ })
