@@ -27,9 +27,6 @@ module.exports = {
     },
     module: {
         rules: [{
-                test: /jquery\.js$/,
-                use: "expose-loader?$!expose-loader?jQuery"
-            }, {
                 test: /\.js$/,
                 exclude: /(node_modules|vendors)/,
                 loader: 'babel',
@@ -96,7 +93,9 @@ module.exports = {
             jquery: 'jquery/dist/jquery.min',
             moment: 'moment/moment',
             PNotify: 'pnotify/dist/pnotify',
-            'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
+            'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min',
+            "datatables.net": "datatables.net/js/jquery.dataTables.js",
+            "datatables.net-bs": "datatables.net-bs/js/dataTables.bootstrap"
         }
     },
     externals: {
@@ -108,11 +107,6 @@ module.exports = {
         }
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-        }),
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
             disable: false,
