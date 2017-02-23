@@ -1,6 +1,6 @@
 /*!
  * Admin is a free to use Bootstrap admin template base on gentelella admin
- * @version v0.1.7
+ * @version v0.1.9
  * @link [object Object]
  * @license MIT License, http://www.opensource.org/licenses/MIT
  */
@@ -79,16 +79,10 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 62);
+/******/ 	return __webpack_require__(__webpack_require__.s = 63);
 /******/ })
 /************************************************************************/
-/******/ (Array(37).concat([
-/* 37 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/******/ (Array(38).concat([
 /* 38 */
 /***/ (function(module, exports) {
 
@@ -234,46 +228,52 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ }),
 /* 62 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(40);
-__webpack_require__(61);
-__webpack_require__(53);
-
-__webpack_require__(48);
-__webpack_require__(38);
-__webpack_require__(47);
-__webpack_require__(56);
-__webpack_require__(59);
-__webpack_require__(57);
-__webpack_require__(52);
-__webpack_require__(49);
-__webpack_require__(50);
-// require("../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css");
 __webpack_require__(41);
-__webpack_require__(55);
+__webpack_require__(62);
 __webpack_require__(54);
-//require("../../vendors/pnotify/dist/pnotify.nonblock.css");
+
+__webpack_require__(49);
+__webpack_require__(39);
+__webpack_require__(48);
+__webpack_require__(57);
+__webpack_require__(60);
+__webpack_require__(58);
+__webpack_require__(53);
+__webpack_require__(50);
+__webpack_require__(51);
+// require("../../vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css");
 __webpack_require__(42);
+__webpack_require__(56);
+__webpack_require__(55);
+//require("../../vendors/pnotify/dist/pnotify.nonblock.css");
 __webpack_require__(43);
 __webpack_require__(44);
 __webpack_require__(45);
 __webpack_require__(46);
-__webpack_require__(39);
-__webpack_require__(58);
-__webpack_require__(37);
+__webpack_require__(47);
+__webpack_require__(40);
+__webpack_require__(59);
+__webpack_require__(38);
 //  var layer= require('../../vendors/layer/build/layer.js');
 
 // require('../../vendors/ng-table/dist/ng-table.css');
 
 
 //left mune scrollbar
-__webpack_require__(51);
+__webpack_require__(52);
 
-__webpack_require__(60);
+__webpack_require__(61);
 
 /***/ })
 /******/ ]));
