@@ -19,7 +19,7 @@ module.exports = {
         path: path.resolve(__dirname, "dist/js"),
         filename: "[name].js",
         library: 'bluetech',
-        libraryTarget: "umd2", // defined with AMD defined method
+        libraryTarget: "umd", // defined with AMD defined method
         umdNamedDefine: true
     },
     resolveLoader: {
@@ -119,6 +119,28 @@ module.exports = {
             parsleyjs: 'parsleyjs/dist/parsley.min',
             'jquery-mousewheel': 'jquery-mousewheel/jquery.mousewheel.min'
         }
+    },
+    externals: {
+        "angular": {
+            root: 'angular',
+            amd: 'angular',
+            commonjs2: 'angular',
+            commonjs: 'angular'
+        },
+        "jquery": {
+            $: 'jquery',
+            "global.jQuery": "jquery",
+            "global.$": "jquery",
+            "window.jQuery": "jquery",
+            "window.$": "jquery"
+        },
+        "moment": {
+            "global.moment": "moment"
+        },
+        "PNotify": {
+            "global.PNotify": "PNotify"
+        }
+
     },
     plugins: [
         new ExtractTextPlugin({
