@@ -112,7 +112,10 @@ module.exports = {
             disable: false,
             allChunks: true
         }),
-        new webpack.LoaderOptionsPlugin({
+        // new webpack.LoaderOptionsPlugin({
+        //     minimize: true
+        // }),
+        new webpack.optimize.UglifyJsPlugin({
             include: /\.min\.js$/,
             minimize: true
         }),

@@ -26503,7 +26503,7 @@ layer.config({
 // util
 __webpack_require__(8);
 
-exports.default = _angular.ng.module('bluetech', []);
+exports.default = _angular.angular.module('bluetech', []);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ })
