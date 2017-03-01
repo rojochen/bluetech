@@ -8,7 +8,7 @@ const webpack = require("webpack"),
     '@license MIT License, http://www.opensource.org/licenses/MIT';
 module.exports = {
     cache: true,
-    devtool: 'source-map',
+    devtool: 'eval',
     entry: {
         "bluetech": `${__dirname}/src/config/main.js`,
         "bluetech.min": `${__dirname}/src/config/main.js`,
@@ -109,12 +109,12 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin({
             filename: "../css/bluetech.min.css",
-            disable: false,
+            // disable: false,
             allChunks: true
         }),
-        // new webpack.LoaderOptionsPlugin({
-        //     minimize: true
-        // }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
+        }),
         new webpack.optimize.UglifyJsPlugin({
             include: /\.min\.js$/,
             minimize: true
