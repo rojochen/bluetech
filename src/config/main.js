@@ -39,7 +39,7 @@ require('../../vendors/jquery-knob/dist/jquery.knob.min.js');
 require('../../vendors/cropper/dist/cropper.min.js');
 require("../../vendors/promise-finally/Main.js");
 
-
+require('./style.js');
 
 
 

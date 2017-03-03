@@ -12,7 +12,7 @@ module.exports = {
     entry: {
         "bluetech": `${__dirname}/src/config/main.js`,
         "bluetech.min": `${__dirname}/src/config/main.js`,
-        "style": `${__dirname}/src/config/style.js`
+        // "style": `${__dirname}/src/config/style.js`
     },
     output: {
         path: path.resolve(__dirname, "dist/js"),
