@@ -9,18 +9,10 @@ Download plugin
     npm run download
 
 
-Build Bluetech dev Library
------------
-
-    npm run build-dev
-
-
-Build Bluetech pro Library
------------
-
-    npm run build-pro
-
 Build Bluetech  Library
 -----------
 
-    npm run build-all
+    npm run build
+
+
+
