@@ -5,7 +5,7 @@ const webpack = require("webpack"),
     banner = pkg.description + '\n' +
     '@version v' + pkg.version + '\n' +
     '@link ' + pkg.homepage + '\n' +
-    '@license MIT License, http://www.opensource.org/licenses/MIT';
+    '@license BlueTechnology.com';
 module.exports = {
     cache: true,
     devtool: 'eval',
